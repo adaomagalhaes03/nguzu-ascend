@@ -9,30 +9,35 @@ const teamMembers = [
     role: 'Diretora Geral',
     department: 'Direção Geral',
     initials: 'GF',
+    image: '/public/032d1f3e-631c-4714-bdfb-beacd06821bamembros.JPG', // Adicione o caminho da foto aqui
   },
   {
-    name: 'Kadima da Silva',
+    name: 'Ruth Matias',
     role: 'Diretor Financeiro',
     department: 'Dept. Financeiro',
     initials: 'KS',
+    image: '/public/RuthMatias.JPG', // Adicione o caminho da foto aqui
   },
   {
     name: 'Ruth Matias',
     role: 'Diretora de Consultoria',
     department: 'Dept. Consultoria',
     initials: 'RM',
+    image: '/public/1ce97821-13dd-43c5-9e21-33ea413426e0membros.JPG', // Adicione o caminho da foto aqui
   },
   {
     name: 'Alciara Silva',
     role: 'Diretora de Formação',
     department: 'Dept. Formação',
     initials: 'AS',
+    image: '/public/3dc5c7fc-f07e-41c9-b353-f743df9ebe4amembros.JPG', // Adicione o caminho da foto aqui
   },
   {
     name: 'Jhony Esteves',
     role: 'Especialista Financeiro',
     department: 'Dept. Financeiro',
     initials: 'JE',
+    image: '/public/4c3bb2ea-2c6d-4c92-8746-3fe05b6e9a77membros.JPG', // Adicione o caminho da foto aqui
   },
 ];
 
@@ -93,14 +98,27 @@ const TeamPreview = () => {
             <motion.div key={member.name} variants={itemVariants} className="team-card group">
               {/* Avatar */}
               <div className="aspect-square relative overflow-hidden">
-                <div className="w-full h-full bg-gradient-to-br from-primary/15 to-primary/5 flex items-center justify-center">
-                  <span className="text-3xl font-heading font-bold text-primary/40 group-hover:text-primary/60 transition-colors">
-                    {member.initials}
-                  </span>
-                </div>
-                
-                {/* Hover overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                {member.image ? (
+                  <>
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                    {/* Hover overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  </>
+                ) : (
+                  <>
+                    <div className="w-full h-full bg-gradient-to-br from-primary/15 to-primary/5 flex items-center justify-center">
+                      <span className="text-3xl font-heading font-bold text-primary/40 group-hover:text-primary/60 transition-colors">
+                        {member.initials}
+                      </span>
+                    </div>
+                    {/* Hover overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  </>
+                )}
               </div>
 
               {/* Info */}
