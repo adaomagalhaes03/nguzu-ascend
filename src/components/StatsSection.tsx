@@ -1,4 +1,4 @@
-import { motion, useInView, useMotionValue, useTransform, animate } from 'framer-motion';
+import { motion, useInView, animate } from 'framer-motion';
 import { useRef, useEffect, useState } from 'react';
 import { Users, Briefcase, GraduationCap, Award } from 'lucide-react';
 
@@ -65,49 +65,49 @@ const stats = [
 
 const StatsSection = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const isInView = useInView(ref, { once: true, margin: '-80px' });
 
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.15 },
+      transition: { staggerChildren: 0.1 },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 30, scale: 0.95 },
+    hidden: { opacity: 0, y: 20, scale: 0.95 },
     visible: {
       opacity: 1,
       y: 0,
       scale: 1,
-      transition: { duration: 0.6, ease: [0.4, 0, 0.2, 1] as const },
+      transition: { duration: 0.5, ease: [0.4, 0, 0.2, 1] as const },
     },
   };
 
   return (
-    <section className="py-24 bg-background relative overflow-hidden">
+    <section className="py-14 bg-background relative overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-glow opacity-30" />
+      <div className="absolute inset-0 bg-gradient-glow opacity-20" />
       
       {/* Decorative circles */}
-      <div className="absolute -top-20 -left-20 w-80 h-80 border border-primary/10 rounded-full" />
-      <div className="absolute -bottom-20 -right-20 w-96 h-96 border border-primary/10 rounded-full" />
+      <div className="absolute -top-16 -left-16 w-48 h-48 border border-primary/8 rounded-full" />
+      <div className="absolute -bottom-16 -right-16 w-56 h-56 border border-primary/8 rounded-full" />
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         {/* Section Header */}
         <motion.div
           ref={ref}
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center max-w-3xl mx-auto mb-16"
+          transition={{ duration: 0.5 }}
+          className="text-center max-w-2xl mx-auto mb-10"
         >
           <span className="section-subtitle">Números que Falam por Nós</span>
           <h2 className="section-title text-foreground">
             Resultados que <span className="text-primary">Inspiram Confiança</span>
           </h2>
-          <p className="text-muted-foreground text-lg">
+          <p className="text-muted-foreground text-sm">
             A nossa trajetória é marcada por conquistas e pela satisfação dos nossos clientes.
           </p>
         </motion.div>
@@ -117,29 +117,29 @@ const StatsSection = () => {
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? 'visible' : 'hidden'}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
+          className="grid grid-cols-2 lg:grid-cols-4 gap-4"
         >
           {stats.map((stat) => (
             <motion.div
               key={stat.label}
               variants={itemVariants}
-              className="card-elevated p-8 text-center group"
+              className="card-elevated p-5 text-center group"
             >
               {/* Icon */}
-              <div className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                <stat.icon className="w-8 h-8 text-primary" />
+              <div className="w-10 h-10 mx-auto mb-3 rounded-lg bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <stat.icon className="w-5 h-5 text-primary" />
               </div>
 
               {/* Counter */}
-              <div className="mb-2">
+              <div className="mb-1">
                 {isInView && <AnimatedCounter value={stat.value} suffix={stat.suffix} />}
               </div>
 
               {/* Label */}
-              <h3 className="font-heading font-semibold text-lg text-foreground mb-1">
+              <h3 className="font-heading font-semibold text-sm text-foreground mb-0.5">
                 {stat.label}
               </h3>
-              <p className="text-sm text-muted-foreground">{stat.description}</p>
+              <p className="text-xs text-muted-foreground">{stat.description}</p>
             </motion.div>
           ))}
         </motion.div>

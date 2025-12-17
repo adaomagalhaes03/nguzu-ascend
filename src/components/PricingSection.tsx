@@ -20,22 +20,6 @@ const packages = [
     highlighted: false,
   },
   {
-    name: 'Pacote Standard',
-    description: 'Ideal para empresas em crescimento',
-    price: '120.000 - 200.000',
-    currency: 'Kz',
-    period: '/mês',
-    features: [
-      'Consultoria estratégica',
-      'Contabilidade completa',
-      'Planeamento fiscal',
-      'Relatórios personalizados',
-      'Suporte contínuo',
-      'Análise financeira trimestral',
-    ],
-    highlighted: false,
-  },
-  {
     name: 'Pacote Premium',
     description: 'Ideal para médias empresas',
     price: '250.000 - 450.000',
@@ -52,52 +36,67 @@ const packages = [
     ],
     highlighted: true,
   },
+  {
+    name: 'Pacote Standard',
+    description: 'Ideal para empresas em crescimento',
+    price: '120.000 - 200.000',
+    currency: 'Kz',
+    period: '/mês',
+    features: [
+      'Consultoria estratégica',
+      'Contabilidade completa',
+      'Planeamento fiscal',
+      'Relatórios personalizados',
+      'Suporte contínuo',
+      'Análise financeira trimestral',
+    ],
+    highlighted: false,
+  },
 ];
 
 const PricingSection = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const isInView = useInView(ref, { once: true, margin: '-80px' });
 
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.2 },
+      transition: { staggerChildren: 0.15 },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 40 },
+    hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: [0.4, 0, 0.2, 1] as const },
+      transition: { duration: 0.5, ease: [0.4, 0, 0.2, 1] as const },
     },
   };
 
   return (
-    <section className="py-24 bg-card relative overflow-hidden">
+    <section className="py-16 bg-muted/30 relative overflow-hidden">
       {/* Background Elements */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-glow opacity-30" />
-      <div className="absolute top-20 right-20 dot-pattern w-40 h-40 opacity-20" />
-      <div className="absolute bottom-20 left-20 dot-pattern w-32 h-32 opacity-15" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-glow opacity-20" />
+      <div className="absolute top-10 right-10 dot-pattern w-24 h-24 opacity-15" />
+      <div className="absolute bottom-10 left-10 dot-pattern w-20 h-20 opacity-10" />
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         {/* Section Header */}
         <motion.div
           ref={ref}
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center max-w-3xl mx-auto mb-16"
+          transition={{ duration: 0.5 }}
+          className="text-center max-w-2xl mx-auto mb-10"
         >
           <span className="section-subtitle">Pacotes de Serviços</span>
           <h2 className="section-title text-foreground">
             Planos Adaptados às Suas <span className="text-primary">Necessidades</span>
           </h2>
-          <p className="text-muted-foreground text-lg">
+          <p className="text-muted-foreground text-sm">
             Escolha o pacote que melhor se adequa à dimensão e aos objetivos da sua empresa.
-            Todos os planos incluem acompanhamento profissional dedicado.
           </p>
         </motion.div>
 
@@ -106,20 +105,20 @@ const PricingSection = () => {
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? 'visible' : 'hidden'}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 items-stretch"
         >
-          {packages.map((pkg, index) => (
+          {packages.map((pkg) => (
             <motion.div
               key={pkg.name}
               variants={itemVariants}
-              className={`relative ${pkg.highlighted ? 'lg:-mt-8 lg:mb-8' : ''}`}
+              className={`relative ${pkg.highlighted ? 'lg:-mt-4 lg:mb-4' : ''}`}
             >
               {/* Popular Badge */}
               {pkg.highlighted && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
-                  <div className="flex items-center gap-1 bg-gradient-primary px-4 py-1.5 rounded-full">
-                    <Star className="w-4 h-4 text-primary-foreground fill-primary-foreground" />
-                    <span className="text-sm font-semibold text-primary-foreground">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-10">
+                  <div className="flex items-center gap-1 bg-gradient-primary px-3 py-1 rounded-full">
+                    <Star className="w-3 h-3 text-primary-foreground fill-primary-foreground" />
+                    <span className="text-xs font-semibold text-primary-foreground">
                       Mais Popular
                     </span>
                   </div>
@@ -132,33 +131,32 @@ const PricingSection = () => {
                 }`}
               >
                 {/* Header */}
-                <div className="text-center mb-6">
-                  <h3 className="font-heading text-2xl font-bold text-foreground mb-2">
+                <div className="text-center mb-4">
+                  <h3 className="font-heading text-lg font-bold text-foreground mb-1">
                     {pkg.name}
                   </h3>
-                  <p className="text-muted-foreground">{pkg.description}</p>
+                  <p className="text-muted-foreground text-xs">{pkg.description}</p>
                 </div>
 
                 {/* Price */}
-                <div className="text-center mb-8 pb-8 border-b border-border/50">
+                <div className="text-center mb-5 pb-5 border-b border-border/50">
                   <div className="flex items-baseline justify-center gap-1">
-                    <span className="text-lg text-muted-foreground">💰</span>
-                    <span className="text-3xl md:text-4xl font-bold text-foreground font-heading">
+                    <span className="text-2xl md:text-3xl font-bold text-foreground font-heading">
                       {pkg.price}
                     </span>
-                    <span className="text-lg text-muted-foreground">{pkg.currency}</span>
+                    <span className="text-sm text-muted-foreground">{pkg.currency}</span>
                   </div>
-                  <span className="text-muted-foreground">{pkg.period}</span>
+                  <span className="text-xs text-muted-foreground">{pkg.period}</span>
                 </div>
 
                 {/* Features */}
-                <ul className="space-y-4 mb-8 flex-grow">
+                <ul className="space-y-2.5 mb-5 flex-grow">
                   {pkg.features.map((feature) => (
-                    <li key={feature} className="flex items-start gap-3">
-                      <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <Check className="w-3 h-3 text-primary" />
+                    <li key={feature} className="flex items-start gap-2">
+                      <div className="w-4 h-4 rounded-full bg-primary/15 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <Check className="w-2.5 h-2.5 text-primary" />
                       </div>
-                      <span className="text-muted-foreground">{feature}</span>
+                      <span className="text-muted-foreground text-xs">{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -166,14 +164,14 @@ const PricingSection = () => {
                 {/* CTA */}
                 <Link
                   to="/contactos"
-                  className={`w-full py-4 rounded-lg font-semibold text-center transition-all duration-300 flex items-center justify-center gap-2 group ${
+                  className={`w-full py-2.5 rounded-lg font-semibold text-center transition-all duration-300 flex items-center justify-center gap-1.5 group text-sm ${
                     pkg.highlighted
                       ? 'btn-hero-primary'
                       : 'border border-border hover:border-primary hover:bg-primary/5 text-foreground'
                   }`}
                 >
                   Solicitar Proposta
-                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
                 </Link>
               </div>
             </motion.div>
@@ -184,11 +182,10 @@ const PricingSection = () => {
         <motion.p
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
-          transition={{ delay: 0.8 }}
-          className="text-center text-muted-foreground mt-12 text-sm"
+          transition={{ delay: 0.6 }}
+          className="text-center text-muted-foreground mt-8 text-xs"
         >
           * Valores podem variar conforme a complexidade e especificidades de cada empresa.
-          Solicite uma proposta personalizada.
         </motion.p>
       </div>
     </section>
