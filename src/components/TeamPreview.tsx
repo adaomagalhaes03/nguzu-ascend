@@ -9,35 +9,35 @@ const teamMembers = [
     role: 'Diretora Geral',
     department: 'Direção Geral',
     initials: 'GF',
-    image: '/public/032d1f3e-631c-4714-bdfb-beacd06821bamembros.JPG', // Adicione o caminho da foto aqui
+    image: '/src/assets/Graciete.JPG', // Adicione o caminho da foto aqui
   },
   {
     name: 'Ruth Matias',
     role: 'Diretor Financeiro',
     department: 'Dept. Financeiro',
     initials: 'KS',
-    image: '/public/RuthMatias.JPG', // Adicione o caminho da foto aqui
+    image: '/src/assets/RuthMatias.JPG', // Adicione o caminho da foto aqui
   },
   {
     name: 'Ruth Matias',
     role: 'Diretora de Consultoria',
     department: 'Dept. Consultoria',
     initials: 'RM',
-    image: '/public/1ce97821-13dd-43c5-9e21-33ea413426e0membros.JPG', // Adicione o caminho da foto aqui
+    image: '/src/assets/5fc6b0e9-e5c8-43b0-8ade-ad2bd5e7ddf1membros.JPG', // Adicione o caminho da foto aqui
   },
   {
     name: 'Alciara Silva',
     role: 'Diretora de Formação',
     department: 'Dept. Formação',
     initials: 'AS',
-    image: '/public/3dc5c7fc-f07e-41c9-b353-f743df9ebe4amembros.JPG', // Adicione o caminho da foto aqui
+    image: '/src/assets/cce5b4d0-5c6e-4ebf-ab63-d49de7916527membros.JPG', // Adicione o caminho da foto aqui
   },
   {
     name: 'Jhony Esteves',
     role: 'Especialista Financeiro',
     department: 'Dept. Financeiro',
     initials: 'JE',
-    image: '/public/4c3bb2ea-2c6d-4c92-8746-3fe05b6e9a77membros.JPG', // Adicione o caminho da foto aqui
+    image: '/src/assets/1ce97821-13dd-43c5-9e21-33ea413426e0membros.JPG', // Adicione o caminho da foto aqui
   },
 ];
 
