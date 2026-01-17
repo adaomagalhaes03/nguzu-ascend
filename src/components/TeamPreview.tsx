@@ -5,39 +5,39 @@ import { ArrowRight } from 'lucide-react';
 
 const teamMembers = [
   {
-    name: 'Gracieth de Fátima',
+    name: 'Graciete Fátima',
     role: 'Diretora Geral',
     department: 'Direção Geral',
     initials: 'GF',
-    image: '/src/assets/Graciete.JPG', // Adicione o caminho da foto aqui
+    image: '/Graciete-Fatima.JPG',
   },
   {
     name: 'Ruth Matias',
-    role: 'Diretor Financeiro',
+    role: 'Diretora Financeira',
     department: 'Dept. Financeiro',
-    initials: 'KS',
-    image: '/src/assets/RuthMatias.JPG', // Adicione o caminho da foto aqui
-  },
-  {
-    name: 'Ruth Matias',
-    role: 'Diretora de Consultoria',
-    department: 'Dept. Consultoria',
     initials: 'RM',
-    image: '/src/assets/5fc6b0e9-e5c8-43b0-8ade-ad2bd5e7ddf1membros.JPG', // Adicione o caminho da foto aqui
-  },
-  {
-    name: 'Alciara Silva',
-    role: 'Diretora de Formação',
-    department: 'Dept. Formação',
-    initials: 'AS',
-    image: '/src/assets/cce5b4d0-5c6e-4ebf-ab63-d49de7916527membros.JPG', // Adicione o caminho da foto aqui
+    image: '/Ruth-Matias.jpeg',
   },
   {
     name: 'Jhony Esteves',
     role: 'Especialista Financeiro',
     department: 'Dept. Financeiro',
     initials: 'JE',
-    image: '/src/assets/1ce97821-13dd-43c5-9e21-33ea413426e0membros.JPG', // Adicione o caminho da foto aqui
+    image: '/Jhony-Esteves.jpeg',
+  },
+  {
+    name: 'Celma Lucas',
+    role: 'Consultora',
+    department: 'Dept. Consultoria',
+    initials: 'CL',
+    image: '/Celma_Lucas.JPG',
+  },
+  {
+    name: 'Manuel Neto',
+    role: 'Consultor Sénior',
+    department: 'Dept. Consultoria',
+    initials: 'MN',
+    image: '/Manuel_Neto.JPG',
   },
 ];
 

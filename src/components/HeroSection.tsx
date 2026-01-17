@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
-import heroBg from '@/assets/hero-bg.jpg';
+const heroBg = '/hero.jpeg';
 import { ProposalModal } from './ProposalModal';
 
 const HeroSection = () => {
