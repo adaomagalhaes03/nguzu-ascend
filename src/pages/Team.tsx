@@ -10,52 +10,53 @@ interface TeamMember {
   department: string;
   initials: string;
   isLeader?: boolean;
+  image?: string;
 }
 
 const departments: { name: string; members: TeamMember[] }[] = [
   {
     name: 'Direção Geral',
     members: [
-      { name: 'Gracieth de Fátima', role: 'Diretora Geral', department: 'Direção Geral', initials: 'GF', isLeader: true },
+      { name: 'Graciete Fátima', role: 'Diretora Geral', department: 'Direção Geral', initials: 'GF', isLeader: true, image: '/Graciete-Fatima.JPG' },
     ],
   },
   {
     name: 'Departamento Financeiro e Estratégico',
     members: [
-      { name: 'Kadima da Silva', role: 'Diretor do Departamento', department: 'Financeiro', initials: 'KS', isLeader: true },
-      { name: 'Jhony Esteves', role: 'Especialista Financeiro Sénior', department: 'Financeiro', initials: 'JE' },
-      { name: 'Luciana Santos', role: 'Analista de Planeamento', department: 'Financeiro', initials: 'LS' },
-      { name: 'Inglês Lucrécia', role: 'Especialista em Comunicação', department: 'Financeiro', initials: 'IL' },
-      { name: 'Rodrigues Zumba', role: 'Técnico de Contabilidade', department: 'Financeiro', initials: 'RZ' },
+      { name: 'Kadima da Silva', role: 'Diretor do Departamento', department: 'Financeiro', initials: 'KS', isLeader: true, image: '/Kadima.jpeg' },
+      { name: 'Jhony Esteves', role: 'Especialista Financeiro Sénior', department: 'Financeiro', initials: 'JE', image: '/Jhony-Esteves.jpeg' },
+      { name: 'Luciana Santos', role: 'Analista de Planeamento', department: 'Financeiro', initials: 'LS', image: '/Luciana-santos.jpeg' },
+      { name: 'Ingrácia Inglês', role: 'Especialista em Comunicação', department: 'Financeiro', initials: 'II', image: '/Ingracia-Ingles.JPG' },
+      { name: 'Rodrigues Zumba', role: 'Técnico de Contabilidade', department: 'Financeiro', initials: 'RZ', image: '/Zumba.jpeg' },
     ],
   },
   {
     name: 'Departamento de Consultoria & Gestão Organizacional',
     members: [
-      { name: 'Ruth Matias', role: 'Diretora do Departamento', department: 'Consultoria', initials: 'RM', isLeader: true },
-      { name: 'Jelson Balanga', role: 'Consultor de Processos', department: 'Consultoria', initials: 'JB' },
-      { name: 'Mayara Luís', role: 'Consultora de Planeamento', department: 'Consultoria', initials: 'ML' },
-      { name: 'Chris Mavinga', role: 'Consultor de Cultura Organizacional', department: 'Consultoria', initials: 'CM' },
-      { name: 'Isabel Ndandi', role: 'Consultora de Gestão Administrativa', department: 'Consultoria', initials: 'IN' },
+      { name: 'Ruth Matias', role: 'Diretora do Departamento', department: 'Consultoria', initials: 'RM', isLeader: true, image: '/Ruth-Matias.jpeg' },
+      { name: 'Jelson Balanga', role: 'Consultor de Processos', department: 'Consultoria', initials: 'JB', image: '/Jelson_Balanga.jpeg' },
+      { name: 'Mayara Luís', role: 'Consultora de Planeamento', department: 'Consultoria', initials: 'ML', image: '/Mayara_Luis.jpeg' },
+      { name: 'Chris Mavinga', role: 'Consultor de Cultura Organizacional', department: 'Consultoria', initials: 'CM', image: '/Cris-Mavinga.jpeg' },
+      { name: 'Isabel Ndandi', role: 'Consultora de Gestão Administrativa', department: 'Consultoria', initials: 'IN', image: '/Isabel-Nadndi.JPG' },
     ],
   },
   {
     name: 'Departamento Técnico-Contabilístico',
     members: [
-      { name: 'Celma Lucas', role: 'Relatórios Contabilísticos', department: 'Contabilidade', initials: 'CL' },
-      { name: 'Simão Manuel', role: 'Auditoria', department: 'Contabilidade', initials: 'SM' },
-      { name: 'Letícia Sapato', role: 'Contabilidade Operacional', department: 'Contabilidade', initials: 'LS' },
-      { name: 'David Kódia', role: 'Obrigações Fiscais', department: 'Contabilidade', initials: 'DK' },
+      { name: 'Celma Lucas', role: 'Relatórios Contabilísticos', department: 'Contabilidade', initials: 'CL', image: '/Celma_Lucas.JPG' },
+      { name: 'Simão Manuel', role: 'Auditoria', department: 'Contabilidade', initials: 'SM', image: '/Samao-Manuel.JPG' },
+      { name: 'Letícia Sapato', role: 'Contabilidade Operacional', department: 'Contabilidade', initials: 'LS', image: '/Leticia.jpeg' },
+      { name: 'David Kódia', role: 'Obrigações Fiscais', department: 'Contabilidade', initials: 'DK', image: '/Kodia.JPG' },
     ],
   },
   {
     name: 'Departamento de Formação & Desenvolvimento Profissional',
     members: [
-      { name: 'Alciara Silva', role: 'Diretora do Departamento', department: 'Formação', initials: 'AS', isLeader: true },
-      { name: 'Nicolau Júnior', role: 'Formador Principal', department: 'Formação', initials: 'NJ' },
-      { name: 'Herodes Quissanga', role: 'Assistente Logístico', department: 'Formação', initials: 'HQ' },
-      { name: 'Dumilde Matoca', role: 'Formador de Desenvolvimento Pessoal', department: 'Formação', initials: 'DM' },
-      { name: 'Graciana Jamba', role: 'Técnica de Avaliação', department: 'Formação', initials: 'GJ' },
+      { name: 'Alciara Silva', role: 'Diretora do Departamento', department: 'Formação', initials: 'AS', isLeader: true, image: '/Al.jpeg' },
+      { name: 'Nicolau Júnior', role: 'Formador Principal', department: 'Formação', initials: 'NJ', image: '/Nicalau.jpeg' },
+      { name: 'Herodes Quissanga', role: 'Assistente Logístico', department: 'Formação', initials: 'HQ', image: '/Herodes.jpeg' },
+      { name: 'Dumilde Matoca', role: 'Formador de Desenvolvimento Pessoal', department: 'Formação', initials: 'DM', image: '/Dumilde-Matoca.jpeg' },
+      { name: 'Graciana Jamba', role: 'Técnica de Avaliação', department: 'Formação', initials: 'GJ', image: '/Graciana-Jamba.jpeg' },
     ],
   },
 ];
@@ -82,11 +83,22 @@ const TeamMemberCard = ({ member, index }: { member: TeamMember; index: number }
       )}
       
       <div className="aspect-square relative overflow-hidden">
-        <div className="w-full h-full bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
-          <span className="text-5xl font-heading font-bold text-primary/50 group-hover:text-primary/70 transition-colors">
-            {member.initials}
-          </span>
-        </div>
+        {member.image ? (
+          <>
+            <img
+              src={member.image}
+              alt={member.name}
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          </>
+        ) : (
+          <div className="w-full h-full bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
+            <span className="text-5xl font-heading font-bold text-primary/50 group-hover:text-primary/70 transition-colors">
+              {member.initials}
+            </span>
+          </div>
+        )}
         <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       </div>
 

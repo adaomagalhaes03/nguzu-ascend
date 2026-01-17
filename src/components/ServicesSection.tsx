@@ -15,35 +15,35 @@ const services = [
     title: 'Consultoria Empresarial',
     description:
       'Estratégias personalizadas para impulsionar o crescimento e a competitividade da sua empresa.',
-    image: 'https://images.unsplash.com/photo-1553028826-f4804a6dba3b?w=600&q=80',
+    image: '/card1.jpeg',
   },
   {
     icon: Calculator,
     title: 'Contabilidade & Fiscalidade',
     description:
       'Gestão contabilística completa e planeamento fiscal para otimizar recursos.',
-    image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80',
+    image: '/card2.jpeg',
   },
   {
     icon: Users,
     title: 'Gestão Organizacional',
     description:
       'Estruturação de processos e desenvolvimento de lideranças para máxima eficiência.',
-    image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&q=80',
+    image: '/WhatsApp Image 2026-01-17 at 16.24.35.jpeg',
   },
   {
     icon: TrendingUp,
     title: 'Planeamento Financeiro',
     description:
       'Análise financeira e estratégias de investimento para decisões informadas.',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80',
+    image: '/WhatsApp Image 2026-01-17 at 16.24.36.jpeg',
   },
   {
     icon: GraduationCap,
     title: 'Formação Profissional',
     description:
       'Programas de capacitação para desenvolver competências técnicas e comportamentais.',
-    image: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&q=80',
+    image: '/WhatsApp Image 2026-01-17 at 16.26.52 (3).jpeg',
   },
 ];
 
