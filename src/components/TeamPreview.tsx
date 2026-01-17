@@ -12,32 +12,25 @@ const teamMembers = [
     image: '/Graciete-Fatima.JPG',
   },
   {
-    name: 'Ruth Matias',
-    role: 'Diretora Financeira',
+    name: 'Kadima da Silva',
+    role: 'Diretor do Departamento',
     department: 'Dept. Financeiro',
+    initials: 'KS',
+    image: '/Kadima.jpeg',
+  },
+  {
+    name: 'Ruth Matias',
+    role: 'Diretora do Departamento',
+    department: 'Dept. Consultoria',
     initials: 'RM',
     image: '/Ruth-Matias.jpeg',
   },
   {
-    name: 'Jhony Esteves',
-    role: 'Especialista Financeiro',
-    department: 'Dept. Financeiro',
-    initials: 'JE',
-    image: '/Jhony-Esteves.jpeg',
-  },
-  {
-    name: 'Celma Lucas',
-    role: 'Consultora',
-    department: 'Dept. Consultoria',
-    initials: 'CL',
-    image: '/Celma_Lucas.JPG',
-  },
-  {
-    name: 'Manuel Neto',
-    role: 'Consultor Sénior',
-    department: 'Dept. Consultoria',
-    initials: 'MN',
-    image: '/Manuel_Neto.JPG',
+    name: 'Alciara Silva',
+    role: 'Diretora do Departamento',
+    department: 'Dept. Formação',
+    initials: 'AS',
+    image: '/Al.jpeg',
   },
 ];
 
@@ -92,7 +85,7 @@ const TeamPreview = () => {
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? 'visible' : 'hidden'}
-          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4"
+          className="grid grid-cols-2 sm:grid-cols-4 gap-4"
         >
           {teamMembers.map((member) => (
             <motion.div key={member.name} variants={itemVariants} className="team-card group">
