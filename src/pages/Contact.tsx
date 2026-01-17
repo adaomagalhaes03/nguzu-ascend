@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { MapPin, Phone, Mail, Send, MessageCircle, Clock } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import { supabase } from '@/integrations/supabase/client';
 
 const Contact = () => {
   const ref = useRef(null);
@@ -23,16 +24,34 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    toast({
-      title: 'Mensagem Enviada!',
-      description: 'Entraremos em contacto consigo brevemente.',
-    });
-    
-    setFormData({ name: '', email: '', phone: '', company: '', message: '' });
-    setIsSubmitting(false);
+    try {
+      const { error } = await supabase.from('proposals').insert({
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone || '',
+        company: formData.company || null,
+        service_type: 'Contacto Geral',
+        message: formData.message,
+      });
+
+      if (error) throw error;
+
+      toast({
+        title: 'Mensagem Enviada!',
+        description: 'Entraremos em contacto consigo brevemente.',
+      });
+      
+      setFormData({ name: '', email: '', phone: '', company: '', message: '' });
+    } catch (error) {
+      console.error('Error submitting contact:', error);
+      toast({
+        title: 'Erro',
+        description: 'Ocorreu um erro ao enviar a mensagem. Tente novamente.',
+        variant: 'destructive',
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleWhatsApp = () => {
@@ -119,8 +138,8 @@ const Contact = () => {
                     </div>
                     <div>
                       <h4 className="font-semibold text-foreground mb-1">Email</h4>
-                      <a href="mailto:corporationelevation@gmail.com" className="text-primary hover:underline break-all">
-                        corporationelevation@gmail.com
+                      <a href="mailto:nguzucultoria@gmail.com" className="text-primary hover:underline break-all">
+                        nguzucultoria@gmail.com
                       </a>
                     </div>
                   </div>
